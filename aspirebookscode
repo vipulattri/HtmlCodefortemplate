@@ -1,0 +1,112 @@
+
+// // info name;
+// // info name;
+// name1 = customer.get("contact_name");
+// contactid1 = customer.get("contact_id");
+// gstList = List();
+// info name1;
+// // for each customer in customers{
+// //    customerName = customer.get("customer_name");
+// //    info customerName;
+// // }
+// // resp = invokeapi
+// // [
+// // 	service: ZohoBooks
+// // 	path: "books/v3/contacts/"+customer
+// // 	type: GET
+// // ];
+// // info resp;
+// // headers_data = Map();
+// // headers_data.put("Authorization", "Zoho-oauthtoken 1000.3558968e003b0f94ee57039773b31158.fbe52599740d91fa10cf7346082c7b26");
+// // organization_id = "60038968814";
+// // name = customer.get("contact_name");
+// // response = invokeurl
+// // [
+// // 	url :"https://www.zohoapis.in/books/v3/contacts?organization_id=60038968814"
+// // 	type :GET
+// // 	connection:"books_connection"
+// // ];
+// // info response.get(0);
+// contactid2 = null;
+// pageList = {1,2,3,4,5};
+// for each  page in pageList
+// {
+// 	response = invokeurl
+// 	[
+// 		url :"https://www.zohoapis.in/books/v3/contacts?organization_id=60038968814&limit=200&page=" + page
+// 		type :GET
+// 		connection:"books_connection"
+// 	];
+// 	contact = response.get("contacts");
+// 	// code = response.get("code");
+// 	cnt = 0;
+// 	flag = 0;
+// 	contactgst = "";
+// 	name1 = customer.get("contact_name");
+// 	name1 = name1.toLowerCase().trim();
+// 	name1 = name1.replaceAll(" ","");
+// 	for each  nameData in contact
+// 	{
+// 		name2 = nameData.get("contact_name");
+// 		name2 = name2.toLowerCase().trim();
+// 		name2 = name2.replaceAll(" ","");
+// 		if(name1 == name2)
+// 		{
+// 			if(flag == 0)
+// 			{
+// 				flag = 1;
+// 				contactid2 = nameData.get("conatct_id");
+// 				contactgst = nameData.get("gst_no");
+// 				if(contactgst != null && contactgst != "")
+// 				{
+// 					gstList.add(contactgst);
+// 				}
+// 			}
+// 			else
+// 			{
+// 				textData = Map();
+// 				textData.put("place_of_supply","MH");
+// 				textData.put("tax_registration_number","36AAFCK7217F1ZL");
+// 				response = invokeurl
+// 				[
+// 					url :"https://www.zohoapis.com/books/v3/contacts/2404133000000447069/taxinfo"
+// 					type :POST
+// 					parameters:{"Content-Type":"application/json"}
+// 					headers:textData
+// 					connection:"books_connection"
+// 				];
+// 				info response;
+// 				contactgst = contactgst + " " + nameData.get("gst_no");
+// 				if(contactgst != null && contactgst == null)
+// 				{
+// 					gstList.add(contactgst);
+// 				}
+// 			}
+// 			cnt = cnt + 1;
+// 		}
+// 	}
+// 	// for each nameData in contact
+// 	// {
+// 	// 	if(name1==nameData.get("contact_name"))
+// 	// 	{
+// 	// 		if(flag==0)
+// 	// 		{
+// 	// 			flag=1;
+// 	// 			contactgst=nameData.get("gst_no");
+// 	// 		}
+// 	// 		else 
+// 	//         {
+// 	// // 			contactgst=contactgst+" "+"gst";
+// 	// 			contactgst=contactgst+" "+nameData.get("gst_no");
+// 	//         }
+// 	// 		cnt=cnt+1;
+// 	// 	}
+// 	// }
+// 	// info contact.get(0).get("contact_name");
+// }
+// info gstList;
+// info cnt;
+// // if(name1==)
+
+
+
